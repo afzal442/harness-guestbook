@@ -1,0 +1,8 @@
+environment:
+  name: gbk-env
+  identifier: gbkenv
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: guestbook
