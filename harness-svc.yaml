@@ -1,0 +1,26 @@
+service:
+  name: gbk-svc
+  identifier: gbksvc
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: gbkapp
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: gtb
+                  gitFetchType: Branch
+                  paths:
+                    - app_manifest/dep.yaml
+                    - app_manifest/svc.yaml
+                  repoName: harness-guestbook
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: guestbook
