@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: gbkinfra
+  identifier: gbkinfra
+  orgIdentifier: default
+  projectIdentifier: guestbook
+  environmentRef: gbkenv
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: harnesscluster
+    namespace: dev
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
